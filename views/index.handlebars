@@ -32,9 +32,14 @@
 
         <div class="form-group">
           <label for="insanity">Insanity</label>
-          <div>
-            {{settings.insanity}}
+          <div id="insanity-display">
+            0
           </div>
+          {{#if settings.insanity}}
+            <div>
+              Current Insanity: {{settings.insanity}}
+            </div>
+          {{/if}}
           <input class="form-control" type="range" name="insanity" id="insanity" max="9" value="{{settings.insanity}}">
         </div>
 
@@ -49,6 +54,10 @@
           if ('{{settings.color}}'.length) {
             $('body').css('color', '#eee');
           }
+          $('#insanity').change( () => {
+            let value = $('#insanity').val();
+            $('#insanity-display').text(value);
+          });
         });
       </script>
 
