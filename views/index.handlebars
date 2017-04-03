@@ -36,11 +36,20 @@
 
 {{#if settings}}
 
+
+    {{#if settings.food}}
+    
+    
+    {{else}}
+        <div>You need to select a food</div>
+    {{/if}}
+    
+
     <div>
         {{> (display settings.alignment) color=settings.color}}
-    </div
+    </div>
 
 
 {{else}}
-  You don't have a cookie yet.
+  <div>You don't have a cookie yet.</div>
 {{/if}}
