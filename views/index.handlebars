@@ -37,11 +37,17 @@
 
 </form>
 
-{{#if imageSize}}
-  <div>
-    <img src="jack.gif" style="width: {{imageSize}} px">
-  </div>
-{{/if}}
+
+<script>
+    $(document).ready(function(event) {
+        $("body").css("background-color", "{{settings.color}}");
+
+    });
+    
+    
+    
+    
+</script>
 
 {{#if settings}}
 
