@@ -1,55 +1,65 @@
-<form action="/" method="post">
-    <div class="form-group">
-        <div class="btn-group" data-toggle="buttons">
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-md-offset-3 col-md-6">
+      <form action="/" method="post">
+        <div class="form-group">
+          <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary active" for="good">
-                <input type="radio" name="alignment" id="good" value="good" {{checked "good" settings.alignment}}>Good</input>
+              <input type="radio" name="alignment" id="good" value="good" {{checked "good" settings.alignment}}>Good</input>
             </label>
             <label class="btn btn-danger" for="evil">
-                <input type="radio" name="alignment" id="evil" value="evil" {{checked "evil" settings.alignment}}>Evil</input>
+              <input type="radio" name="alignment" id="evil" value="evil" {{checked "evil" settings.alignment}}>Evil</input>
             </label>
+          </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <label for="food">Favorite Food</label>
-        <input class="form-control" type="text" name="food" id="food" placeholder="{{settings.food}}">
-    </div>
+        <div class="form-group">
+          <label for="food">Favorite Food</label>
+          <input class="form-control" type="text" name="food" id="food" placeholder="{{settings.food}}">
+        </div>
 
-    <div class="form-group">
-        <label for="color">Favorite Color</label>
-        <select class="form-control" name="color" id="color">
+        <div class="form-group">
+          <label for="color">Favorite Color</label>
+          <select class="form-control" name="color" id="color">
             <option value="red" {{selected "red" settings.color}}>Red</option>
             <option value="blue" {{selected "blue" settings.color}}>Blue</option>
             <option value="black" {{selected "black" settings.color}}>Black</option>
             <option value="green" {{selected "green" settings.color}}>Green</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="insanity">Insanity</label>
-        <div>
-          {{settings.insanity}}
+          </select>
         </div>
-        <input class="form-control" type="range" name="insanity" id="insanity" max="9" value="{{settings.insanity}}">
+
+        <div class="form-group">
+          <label for="insanity">Insanity</label>
+          <div>
+            {{settings.insanity}}
+          </div>
+          <input class="form-control" type="range" name="insanity" id="insanity" max="9" value="{{settings.insanity}}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+
+
+      <script>
+        $(document).ready(function(event) {
+          $("body").css("background-color", "{{settings.color}}");
+          if ('{{settings.color}}'.length) {
+            $('body').css('color', '#eee');
+          }
+        });
+      </script>
+
+      <h1>Your Alignment is {{settings.alignment}}</h1>
+
+      {{#if settings}}
+      {{> (display settings.alignment)}}
+      {{else}}
+      You don't have a cookie yet.
+      {{/if}}
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-
-</form>
-
-
-<script>
-    $(document).ready(function(event) {
-        $("body").css("background-color", "{{settings.color}}");
-    });
-</script>
-
-{{settings.adjective}}
-
-{{#if settings}}
-
-  {{> (display settings.alignment)}}
-
-{{else}}
-  You don't have a cookie yet.
-{{/if}}
+  </div>
+</div>

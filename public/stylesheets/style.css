@@ -1,6 +1,4 @@
 body {
-  max-width: 650px;
-  margin: 0 auto;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -9,6 +7,6 @@ a {
   color: #00B7FF;
 }
 
-.item {
-  padding: 15px 15px;
+.margin-top {
+  margin-top: 20px;
 }

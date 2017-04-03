@@ -1,32 +1,43 @@
-<div>I'm evil! BWAHAHAHAHHA</div>
-{{#if imageSize}}
+<div class="row">
+  {{#if imageSize}}
+    <div class="text-center">
+        <img src="http://i.imgur.com/Jv8h6ex.gif" style="width: {{imageSize}}px">
+    </div>
+  {{/if}}
 
-<div>
-    <img src="http://i.imgur.com/Jv8h6ex.gif" style="width: {{imageSize}}px">
+  <div class="col-xs-6 margin-top">
+    <div>Things I hate
+        <ul>
+            {{#if settings.color}}
+              <li>
+                {{settings.color}}
+              </li>
+            {{/if}}
+            {{#if settings.food}}
+              <li>
+                {{settings.adjective}} {{settings.food}}
+              </li>
+            {{/if}}
+            <li>Puppies</li>
+            <li>Charity</li>
+        </ul>
+    </div>
+  </div>
+
+  <div class="col-xs-6 margin-top">
+    <div>Things I enjoy
+        <ul>
+            <li>Bad Men</li>
+            <li>Pain</li>
+            <li>Suffering</li>
+            <li>Anger</li>
+        </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2>Biography</h2>
+    <p>I'm an evil person and I hate life.</p>
+  </div>
+
 </div>
-{{/if}}
-
-<div>Things I hate
-    <ul>
-        <li class="item" style="background-color: {{settings.color}}; color: white;">
-          {{settings.color}}
-        </li>
-        <li>
-          {{settings.adjective}} {{settings.food}}
-        </li>
-        <li>Puppies</li>
-        <li>Charity</li>
-    </ul>
-</div>
-
-<div>Things I enjoy
-    <ul>
-        <li>Bad Men</li>
-        <li>Pain</li>
-        <li>Suffering</li>
-        <li>Anger</li>
-    </ul>
-</div>
-
-<h2>Biography</h2>
-<p>I'm an evil person and I hate life.</p>
