@@ -8,3 +8,7 @@ body {
 a {
   color: #00B7FF;
 }
+
+.item {
+  padding: 15px 15px;
+}

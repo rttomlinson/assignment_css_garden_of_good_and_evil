@@ -5,12 +5,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   let settings;
   if (req.cookies.settings) settings = JSON.parse(req.cookies.settings);
-  // grab settings
-  // read it and grab info off of it
-  // send into view separately
-  settings.alignment = 'good';
-  console.log(`Value of settings.alignment is ${ settings.alignment }`);
-
   res.render('index', { settings });
 });
 
