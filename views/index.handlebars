@@ -38,6 +38,27 @@
 </form>
 
 {{#if settings}}
+
+    <div>This is there settings.alignment goes!
+        {{> (display settings.alignment)}}
+    </div>
+    <div>Things I like
+        <ul>
+            <li>{{settings.color}}</li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div>Things I dislike
+        <ul>
+            <li>{{settings.food}}</li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    
   
 {{else}}
   You don't have a cookie yet.

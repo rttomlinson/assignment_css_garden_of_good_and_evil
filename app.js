@@ -14,7 +14,13 @@ var index = require('./routes/index');
 var app = express();
 
 // view engine setup
-app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}));
+app.engine('handlebars', expressHandlebars({
+  defaultLayout: 'main', 
+  helpers: { display: (name) => { 
+    return String(name); 
+    }
+  }
+}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
