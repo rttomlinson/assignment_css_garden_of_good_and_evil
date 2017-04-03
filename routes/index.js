@@ -3,7 +3,20 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  let settings;
+  if (req.cookies.settings) settings = JSON.parse(req.cookies.settings);
+  // grab settings
+  // read it and grab info off of it
+  // send into view separately
+
+  res.render('index', { settings });
+});
+
+router.post('/', (req, res) => {
+  const { alignment, food, color, insanity } = req.body;
+  const settings = { alignment, food, color, insanity };
+  res.cookie("settings", JSON.stringify(settings, null, 2));
+  res.redirect('/');
 });
 
 module.exports = router;

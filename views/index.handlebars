@@ -9,15 +9,15 @@
             </label>
             <label class="btn btn-danger" for="evil">
                 <input class="" type="radio" name="alignment" id="evil" value="evil">Evil</input>
-            </label>        
+            </label>
         </div>
     </div>
-    
+
     <div class="form-group">
         <label for="food">Favorite Food</label>
         <input class="form-control" type="text" name="food" id="food">
     </div>
-    
+
     <div class="form-group">
         <label for="color">Favorite Color</label>
         <select class="form-control" name="color" id="color">
@@ -27,18 +27,18 @@
             <option value="green">Green</option>
         </select>
     </div>
-    
-    
+
     <div class="form-group">
         <label for="insanity">Insanity</label>
         <input class="form-control" type="range" name="insanity" id="insanity" max="9" value="0">
     </div>
-    
-    
-    
-    
-    
 
     <button type="submit" class="btn btn-primary">Submit</button>
-    
+
 </form>
+
+{{#if settings}}
+  
+{{else}}
+  You don't have a cookie yet.
+{{/if}}
