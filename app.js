@@ -15,9 +15,16 @@ var app = express();
 
 // view engine setup
 app.engine('handlebars', expressHandlebars({
-  defaultLayout: 'main', 
-  helpers: { display: (name) => { 
-    return String(name); 
+  defaultLayout: 'main',
+  helpers: {
+    display: (name) => {
+      return String(name);
+    },
+    checked: (str, alignment) => {
+      if (str === alignment) return 'checked';
+    },
+    selected: (str, color) => {
+      if (str === color) return 'selected';
     }
   }
 }));

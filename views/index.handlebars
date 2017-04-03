@@ -2,54 +2,51 @@
     <div class="form-group">
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary active" for="good">
-                <input type="radio" name="alignment" id="good" value="good" checked>Good</input>
+                <input type="radio" name="alignment" id="good" value="good" {{checked "good" settings.alignment}}>Good</input>
             </label>
             <label class="btn btn-danger" for="evil">
-                <input type="radio" name="alignment" id="evil" value="evil">Evil</input>
+                <input type="radio" name="alignment" id="evil" value="evil" {{checked "evil" settings.alignment}}>Evil</input>
             </label>
         </div>
     </div>
 
     <div class="form-group">
         <label for="food">Favorite Food</label>
-        <input class="form-control" type="text" name="food" id="food">
+        <input class="form-control" type="text" name="food" id="food" placeholder="{{settings.food}}">
     </div>
 
     <div class="form-group">
         <label for="color">Favorite Color</label>
         <select class="form-control" name="color" id="color">
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-            <option value="black">Black</option>
-            <option value="green">Green</option>
+            <option value="red" {{selected "red" settings.color}}>Red</option>
+            <option value="blue" {{selected "blue" settings.color}}>Blue</option>
+            <option value="black" {{selected "black" settings.color}}>Black</option>
+            <option value="green" {{selected "green" settings.color}}>Green</option>
         </select>
     </div>
 
     <div class="form-group">
         <label for="insanity">Insanity</label>
-        <input class="form-control" type="range" name="insanity" id="insanity" max="9" value="0">
+        <div>
+          {{settings.insanity}}
+        </div>
+        <input class="form-control" type="range" name="insanity" id="insanity" max="9" value="{{settings.insanity}}">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
 
+{{#if imageSize}}
+  <div>
+    <img src="jack.gif" style="width: {{imageSize}} px">
+  </div>
+{{/if}}
+
 {{#if settings}}
 
-
-    {{#if settings.food}}
-    
-    
-    {{else}}
-        <div>You need to select a food</div>
-    {{/if}}
-    
-
-    <div>
-        {{> (display settings.alignment) color=settings.color}}
-    </div>
-
+  {{> (display settings.alignment)}}
 
 {{else}}
-  <div>You don't have a cookie yet.</div>
+  You don't have a cookie yet.
 {{/if}}
