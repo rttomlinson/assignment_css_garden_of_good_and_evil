@@ -10,3 +10,8 @@ a {
 .margin-top {
   margin-top: 20px;
 }
+
+
+#insanity-display {
+  display: inline-block;
+}
